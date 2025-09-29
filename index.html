@@ -36,103 +36,105 @@
       >Skip to form</a
     >
 
+    <div class="loading-bar" role="status" aria-live="polite">
+      <span class="loading-bar__progress"></span>
+    </div>
+
     <main class="page-shell">
-      <!-- NAV (simple) -->
+      <!-- NAV -->
       <nav class="section nav-section" aria-label="Primary">
         <div class="container nav-card">
-          <div class="nav-brand">
-            <div class="icon" aria-hidden="true">5Q</div>
-            <strong>Quantum Communication & Social Science</strong>
+          <a class="nav-logo" href="#top">
+            <img
+              src="images/parents_first_logo1.png"
+              alt="Parents First"
+              width="150"
+              height="48"
+            />
+          </a>
+          <div class="nav-title">
+            5Q Quantum Communication and Social Science
           </div>
-          <div class="nav-actions">
-            <a class="btn btn-ghost" href="#faq" aria-label="Go to FAQ">FAQ</a>
-            <a class="btn btn-primary" href="#interview-form">Book Interview</a>
-          </div>
+          <a class="btn btn-primary nav-cta" href="#interview-form"
+            >Book Interview</a
+          >
         </div>
       </nav>
 
-    <!-- 1) HERO -->
-    <header class="hero section">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="hero-tag reveal"
-              >Malaysia’s first quantum communication course</span
-            >
-            <h1 class="reveal">
-              5Q Quantum Communication and Social Science<br />🔓 Unlock the
-              Next Dimension of Human Connection
-            </h1>
-            <p class="hero-lead reveal">
-              In a world driven by AI, rapid change, and constant noise — the
-              one skill that sets you apart is how deeply you connect,
-              influence, and lead.
-            </p>
-            <p class="reveal">
-              The 5Q Quantum Communication and Social Science course is the
-              first of its kind in Malaysia, combining quantum communication
-              theory with social science insights to help you decode human
-              behavior, elevate your influence, and future-proof your
-              leadership.
-            </p>
-            <p class="reveal">
-              This isn’t just another soft skills course. It’s a scientifically
-              backed, globally aligned program that helps you understand how
-              people think, decide, and connect at the deepest level — so you
-              can lead teams, nurture relationships, and create impact that
-              lasts.
-            </p>
+      <!-- 1) HERO -->
+      <header class="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero-gradient-overlay" aria-hidden="true"></div>
+          <!-- Animated background bubbles (decorative) -->
+          <div class="hero-bubbles" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
 
-            <div class="hero-actions reveal">
-              <a class="btn btn-primary" href="#interview-form"
-                >Book Interview</a
-              >
-
-              <!-- TODO -->
-              <a
-                class="btn btn-ghost"
-                href="#info-pack"
-                aria-describedby="todo-infopack"
-                >Download Info Pack</a
-              >
-            </div>
-
-            <div class="hero-points reveal">
-              <div class="hero-point">
-                <span aria-hidden="true">⚛️</span>
-                <p>Decode human behaviour with research-backed frameworks.</p>
+          <div class="hero-grid">
+            <!-- Left: content -->
+            <div class="hero-copy">
+              <div class="hero-heading reveal">
+                <span class="hero-tag">Malaysia’s first quantum communication course</span>
+                <h1 id="hero-title" class="hero-title">
+                  <span class="hero-title-main">5Q Quantum Communication and Social Science</span>
+                </h1>
+                <p class="hero-title-sub">🔓 Unlock the Next Dimension of Human Connection</p>
+                <span class="accent" aria-hidden="true"></span>
               </div>
-              <div class="hero-point">
-                <span aria-hidden="true">🧠</span>
-                <p>
-                  Lead, coach, and teach with empathy, clarity, and influence.
+
+              <div class="hero-description reveal">
+                <p class="hero-lead">
+                  In a world driven by AI, rapid change, and constant noise —
+                  the one skill that sets you apart is how deeply you connect,
+                  influence, and lead.
                 </p>
+                <p>
+                  The 5Q Quantum Communication and Social Science course is the
+                  first of its kind in Malaysia, combining quantum communication
+                  theory with social science insights to help you decode human
+                  behavior, elevate your influence, and future-proof your
+                  leadership.
+                </p>
+                <p>
+                  This isn’t just another soft skills course. It’s a
+                  scientifically backed, globally aligned program that helps you
+                  understand how people think, decide, and connect at the
+                  deepest level — so you can lead teams, nurture relationships,
+                  and create impact that lasts.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn btn-primary" href="#interview-form">Book Interview</a>
+                </div>
               </div>
-              <div class="hero-point">
-                <span aria-hidden="true">🚀</span>
-                <p>Future-proof your impact in an AI-driven world.</p>
-              </div>
+            </div>
+            
+
+            <!-- Right: media -->
+            <div class="hero-media reveal">
+              <div class="hero-media-orbit" aria-hidden="true"></div>
+              <figure class="hero-figure">
+                <img
+                  src="images/ai-team.png"
+                  alt="Learners collaborating in a modern environment"
+                  loading="eager"
+                  decoding="async"
+                />
+                <span class="hero-glow" aria-hidden="true"></span>
+              </figure>
             </div>
           </div>
-          <div class="hero-media reveal">
-            <div class="hero-figure">
-              <img
-                src="images/meeting3.png"
-                alt="Facilitator guiding professionals during a 5Q Quantum Communication discussion"
-                loading="lazy"
-              />
-              <span class="hero-glow" aria-hidden="true"></span>
-            </div>
-            <div class="hero-card">
-              <p class="hero-card-title">Scientifically backed</p>
-              <p>
-                Apply quantum communication theory with social science in every
-                session.
-              </p>
-            </div>
-          </div>
-          <div class="hero-details reveal">
-            <h3>🎯 What you’ll gain:</h3>
+        </div>
+      </header>
+
+      <!-- Standalone: What you’ll gain (extracted from hero) -->
+      <section class="section hero-benefits">
+        <div class="container ">
+          <h2 class="reveal">🧭 Who Should Join?</h2>
+          <p class="reveal">This course is designed for:</p>
             <ul>
               <li>
                 Advanced tools to decode communication patterns in individuals
@@ -153,754 +155,787 @@
               transformation.<br />Join us and step into the future of
               communication.
             </p>
+            <div class="hero-details-buttons" style="justify-content: center">
+              <a class="btn btn-primary hero-details-cta" href="#interview-form"
+                >Book Interview</a
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </section>
 
-    <!-- 2) WHO SHOULD JOIN -->
-    <section class="section">
-      <div class="container">
-        <h2 class="reveal">🧭 Who Should Join?</h2>
-        <p class="reveal">This course is designed for:</p>
-        <div class="grid grid-4">
-          <div class="card reveal">
-            <h4>
-              Professionals & Leaders – who want to master influence and lead
-              with clarity.
-            </h4>
-          </div>
-          <div class="card reveal">
-            <h4>
-              Educators & Trainers – who want to understand how students and
-              participants truly think, learn, and respond.
-            </h4>
-          </div>
-          <div class="card reveal">
-            <h4>
-              Couples & Parents – who want to elevate communication at home
-              while preparing for future parenting challenges.
-            </h4>
-          </div>
-          <div class="card reveal">
-            <h4>
-              Entrepreneurs & Innovators – who need to connect with clients,
-              investors, and partners with authenticity and power.
-            </h4>
+      <!-- 2) WHO SHOULD JOIN -->
+      <section class="section">
+        <div class="container">
+          <h2 class="reveal">🧭 Who Should Join?</h2>
+          <p class="reveal">This course is designed for:</p>
+          <div class="grid grid-4">
+            <div class="card reveal">
+              <h4>
+                Professionals & Leaders – who want to master influence and lead
+                with clarity.
+              </h4>
+            </div>
+            <div class="card reveal">
+              <h4>
+                Educators & Trainers – who want to understand how students and
+                participants truly think, learn, and respond.
+              </h4>
+            </div>
+            <div class="card reveal">
+              <h4>
+                Couples & Parents – who want to elevate communication at home
+                while preparing for future parenting challenges.
+              </h4>
+            </div>
+            <div class="card reveal">
+              <h4>
+                Entrepreneurs & Innovators – who need to connect with clients,
+                investors, and partners with authenticity and power.
+              </h4>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 3) WHAT YOU’LL LEARN -->
-    <section class="section" id="learn">
-      <div class="container">
-        <h2 class="reveal">📚 What You’ll Learn</h2>
-        <p class="reveal">Throughout the 5Q journey, you’ll unlock:</p>
-        <div class="grid grid-4">
-          <div class="card reveal">
-            <h3>Quantum Awareness</h3>
-            <p>
-              Understanding the invisible layers of communication (tone,
-              emotion, subconscious cues).
-            </p>
-            <p>
-              Applying neuroscience and social science to decode human
-              reactions.
-            </p>
+      <!-- 3) WHAT YOU’LL LEARN -->
+      <section class="section" id="learn">
+        <div class="container">
+          <h2 class="reveal">📚 What You’ll Learn</h2>
+          <p class="reveal">Throughout the 5Q journey, you’ll unlock:</p>
+          <div class="grid grid-4">
+            <div class="card reveal">
+              <h3>Quantum Awareness</h3>
+              <p>
+                Understanding the invisible layers of communication (tone,
+                emotion, subconscious cues).
+              </p>
+              <p>
+                Applying neuroscience and social science to decode human
+                reactions.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>Influence & Leadership</h3>
+              <p>
+                Communicating with presence, clarity, and impact in any setting.
+              </p>
+              <p>Shifting group dynamics and inspiring change without force.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Adaptive Communication</h3>
+              <p>Responding effectively under stress and uncertainty.</p>
+              <p>Building resilience while staying connected to others.</p>
+            </div>
+            <div class="card reveal">
+              <h3>Social Science in Action</h3>
+              <p>Reading social patterns across cultures and communities.</p>
+              <p>
+                Using research-backed strategies to improve collaboration and
+                trust.
+              </p>
+            </div>
           </div>
-          <div class="card reveal">
-            <h3>Influence & Leadership</h3>
-            <p>
-              Communicating with presence, clarity, and impact in any setting.
-            </p>
-            <p>Shifting group dynamics and inspiring change without force.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Adaptive Communication</h3>
-            <p>Responding effectively under stress and uncertainty.</p>
-            <p>Building resilience while staying connected to others.</p>
-          </div>
-          <div class="card reveal">
-            <h3>Social Science in Action</h3>
-            <p>Reading social patterns across cultures and communities.</p>
-            <p>
-              Using research-backed strategies to improve collaboration and
-              trust.
-            </p>
-          </div>
+
+          <figure class="hero-details-figure">
+            <img
+              src="images/meeting2.png"
+              alt="5Q Quantum Communication journey illustration"
+              loading="lazy"
+            />
+          </figure>
         </div>
+      </section>
 
-        <figure class="hero-details-figure">
-          <img
-            src="images/meeting2.png"
-            alt="5Q Quantum Communication journey illustration"
-            loading="lazy"
-          />
-        </figure>
-      </div>
-    </section>
+      <!-- 4) WHAT MAKES 5Q DIFFERENT -->
+      <section class="section">
+        <div class="container">
+          <h2 class="reveal">🔑 What Makes 5Q Different?</h2>
+          <div class="grid grid-3">
+            <div class="card reveal">
+              <h3>✅ Rooted in Science, Not Tricks</h3>
+              <p>
+                Built on psychotherapy, neuroscience, and Finnish education
+                principles, not just memorized techniques.
+              </p>
+              <p>
+                You learn how humans actually think, feel, decide, and connect —
+                then apply it in real life.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>✅ Authentic, Not Scripted</h3>
+              <p>
+                Instead of copying someone else’s “style,” you discover your own
+                communication blueprint (IQ, EQ, AQ, SQ, UQ).
+              </p>
+              <p>
+                This means no pretending, no faking — just you, more powerful
+                and authentic.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>✅ Future-Ready, Not Outdated</h3>
+              <p>
+                In an AI-driven world, mechanical persuasion techniques are
+                becoming obsolete.
+              </p>
+              <p>
+                What can’t be replaced is human connection, adaptability,
+                empathy, and influence — the very heart of 5Q.
+              </p>
+            </div>
 
-    <!-- 4) WHAT MAKES 5Q DIFFERENT -->
-    <section class="section">
-      <div class="container">
-        <h2 class="reveal">🔑 What Makes 5Q Different?</h2>
-        <div class="grid grid-3">
-          <div class="card reveal">
-            <h3>✅ Rooted in Science, Not Tricks</h3>
-            <p>
-              Built on psychotherapy, neuroscience, and Finnish education
-              principles, not just memorized techniques.
-            </p>
-            <p>
-              You learn how humans actually think, feel, decide, and connect —
-              then apply it in real life.
-            </p>
+            <div class="card reveal">
+              <h3>✅ Learning the Finnish Way</h3>
+              <p>
+                Inspired by Finland’s world-leading education model, 5Q uses
+                play pedagogy, project-based learning, and experiential
+                learning.
+              </p>
+              <p>
+                You don’t just study — you experience through role-play,
+                reflection, and real-world application.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>✅ Aligned with Malaysia’s NEP & Global Standards</h3>
+              <p>
+                5Q is designed in line with the National Education Policy (NEP),
+                the Malaysian Education Blueprint, and the UN Sustainable
+                Development Goals.
+              </p>
+              <p>
+                It is a course that balances holistic growth, inclusivity, and
+                global competence.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>✅ Clear Growth Path</h3>
+              <p>
+                5Q isn’t a standalone workshop. It’s part of a progressive
+                system: 4Q → 5Q → Professional Diploma in 6Q Quantum
+                Communication and Social Science.
+              </p>
+              <p>
+                Each step takes you closer to becoming a globally recognized
+                leader in communication and human development.
+              </p>
+            </div>
           </div>
-          <div class="card reveal">
-            <h3>✅ Authentic, Not Scripted</h3>
+
+          <figure class="hero-details-figure">
+            <img
+              src="images/meeting.png"
+              alt="5Q Quantum Communication journey illustration"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="maxw reveal" style="margin-top: var(--s-6)">
             <p>
-              Instead of copying someone else’s “style,” you discover your own
-              communication blueprint (IQ, EQ, AQ, SQ, UQ).
+              In a world where AI outpaces human knowledge, IQ alone is no
+              longer enough. Dr. Elaine Loo equips families, educators, and
+              leaders with the full spectrum of intelligences, emotional (EQ),
+              adaptive (AQ), social (SQ), and self-awareness (UQ). So human
+              potential doesn’t just survive, but thrives.
             </p>
             <p>
-              This means no pretending, no faking — just you, more powerful and
-              authentic.
-            </p>
-          </div>
-          <div class="card reveal">
-            <h3>✅ Future-Ready, Not Outdated</h3>
-            <p>
-              In an AI-driven world, mechanical persuasion techniques are
-              becoming obsolete.
-            </p>
-            <p>
-              What can’t be replaced is human connection, adaptability, empathy,
-              and influence — the very heart of 5Q.
+              Her pioneering 5Q MindVehicle™ Framework has inspired families,
+              uplifted schools, and guided organizations across Asia and beyond.
+              From keynote stages in India, Finland, and Austria to parenting
+              programs on the ground, her mission is simple: the more people who
+              live with 5Q, the stronger our communities and the brighter our
+              future.
             </p>
           </div>
 
-          <div class="card reveal">
-            <h3>✅ Learning the Finnish Way</h3>
-            <p>
-              Inspired by Finland’s world-leading education model, 5Q uses play
-              pedagogy, project-based learning, and experiential learning.
-            </p>
-            <p>
-              You don’t just study — you experience through role-play,
-              reflection, and real-world application.
-            </p>
-          </div>
-          <div class="card reveal">
-            <h3>✅ Aligned with Malaysia’s NEP & Global Standards</h3>
-            <p>
-              5Q is designed in line with the National Education Policy (NEP),
-              the Malaysian Education Blueprint, and the UN Sustainable
-              Development Goals.
-            </p>
-            <p>
-              It is a course that balances holistic growth, inclusivity, and
-              global competence.
-            </p>
-          </div>
-          <div class="card reveal">
-            <h3>✅ Clear Growth Path</h3>
-            <p>
-              5Q isn’t a standalone workshop. It’s part of a progressive system:
-              4Q → 5Q → Professional Diploma in 6Q Quantum Communication and
-              Social Science.
-            </p>
-            <p>
-              Each step takes you closer to becoming a globally recognized
-              leader in communication and human development.
-            </p>
-          </div>
+          <figure class="hero-details-figure">
+            <img
+              src="images/4Q_Mirror_Playlab.png"
+              alt="5Q Quantum Communication journey illustration"
+              loading="lazy"
+            />
+          </figure>
         </div>
+      </section>
 
-        <figure class="hero-details-figure">
-          <img
-            src="images/meeting.png"
-            alt="5Q Quantum Communication journey illustration"
-            loading="lazy"
-          />
-        </figure>
-
-        <div class="maxw reveal" style="margin-top: var(--s-6)">
-          <p>
-            In a world where AI outpaces human knowledge, IQ alone is no longer
-            enough. Dr. Elaine Loo equips families, educators, and leaders with
-            the full spectrum of intelligences, emotional (EQ), adaptive (AQ),
-            social (SQ), and self-awareness (UQ). So human potential doesn’t
-            just survive, but thrives.
-          </p>
-          <p>
-            Her pioneering 5Q MindVehicle™ Framework has inspired families,
-            uplifted schools, and guided organizations across Asia and beyond.
-            From keynote stages in India, Finland, and Austria to parenting
-            programs on the ground, her mission is simple: the more people who
-            live with 5Q, the stronger our communities and the brighter our
-            future.
-          </p>
-        </div>
-
-        <figure class="hero-details-figure">
-          <img
-            src="images/4Q_Mirror_Playlab.png"
-            alt="5Q Quantum Communication journey illustration"
-            loading="lazy"
-          />
-        </figure>
-      </div>
-    </section>
-
-    <!-- 🎁 What You’ll Receive -->
-    <section class="section">
-      <div class="container">
-        <h2 class="reveal">🎁 What You’ll Receive</h2>
-        <div class="grid grid-3">
-          <div class="card reveal">
-            <h3>Comprehensive 5Q Toolkit</h3>
-            <p>
-              Worksheets, decoding charts, and reflection guides to map out your
-              unique communication style.
-            </p>
+      <!-- 🎁 What You’ll Receive -->
+      <section class="section">
+        <div class="container">
+          <h2 class="reveal">🎁 What You’ll Receive</h2>
+          <div class="grid grid-3">
+            <div class="card reveal">
+              <h3>Comprehensive 5Q Toolkit</h3>
+              <p>
+                Worksheets, decoding charts, and reflection guides to map out
+                your unique communication style.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>Practical Labs & Roleplays</h3>
+              <p>
+                Real-world simulations where you’ll practice decoding,
+                influencing, and leading.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>Expert Guidance</h3>
+              <p>
+                Led by Dr. Elaine Loo Yee Ling (PhD in Education, MA in
+                Psychology), together with Parents First facilitators.
+              </p>
+            </div>
           </div>
-          <div class="card reveal">
-            <h3>Practical Labs & Roleplays</h3>
+          <div class="card reveal" style="margin-top: var(--s-3)">
+            <h3>Certificate of Completion</h3>
             <p>
-              Real-world simulations where you’ll practice decoding,
-              influencing, and leading.
-            </p>
-          </div>
-          <div class="card reveal">
-            <h3>Expert Guidance</h3>
-            <p>
-              Led by Dr. Elaine Loo Yee Ling (PhD in Education, MA in
-              Psychology), together with Parents First facilitators.
-            </p>
-          </div>
-        </div>
-        <div class="card reveal" style="margin-top: var(--s-3)">
-          <h3>Certificate of Completion</h3>
-          <p>
-            Recognized by Parents First as a valid entry into the 6Q
-            Professional Diploma.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5) OUTCOMES: What You’ll Gain (UQ/SQ/EQ/IQ/AQ as a band) -->
-    <section class="section">
-      <div class="container">
-        <h2 class="reveal">🎯 What You’ll Gain</h2>
-        <div class="grid grid-5">
-          <div class="card reveal">
-            <div class="icon" aria-hidden="true">UQ</div>
-            <p>
-              <strong>Deep Self-Mastery (UQ)</strong> – awareness of your
-              emotions, patterns, and potential. Build emotional clarity and
-              unlock your hidden potential.
-            </p>
-          </div>
-          <div class="card reveal">
-            <div class="icon" aria-hidden="true">SQ</div>
-            <p>
-              <strong>Strategic Planning & Empowerment (SQ)</strong> –
-              confidence to plan, learn how to empower yourself and others with
-              clarity.
-            </p>
-          </div>
-          <div class="card reveal">
-            <div class="icon" aria-hidden="true">EQ</div>
-            <p>
-              <strong>Emotional Intelligence (EQ)</strong> – empathy, conflict
-              resolution, and relationship mastery. Transform how you connect in
-              families, classrooms, and workplaces.
-            </p>
-          </div>
-          <div class="card reveal">
-            <div class="icon" aria-hidden="true">IQ</div>
-            <p>
-              <strong>Critical Thinking (IQ)</strong> – sharper decision-making
-              in parenting and professional life. Balance professional roles
-              with family leadership.
-            </p>
-          </div>
-          <div class="card reveal">
-            <div class="icon" aria-hidden="true">AQ</div>
-            <p>
-              <strong>Adaptability (AQ)</strong> – strength to embrace change
-              and overcome challenges. Learn to navigate uncertainty and turn
-              obstacles into opportunities.
+              Recognized by Parents First as a valid entry into the 6Q
+              Professional Diploma.
             </p>
           </div>
         </div>
-        <figure class="hero-details-figure">
-          <img
-            src="images/5Q_Brain.png"
-            alt="5Q Quantum Communication journey illustration"
-            loading="lazy"
-          />
-        </figure>
-      </div>
-    </section>
+      </section>
 
-    <!-- 6) CLASS STRUCTURE & FEES -->
-    <section class="section" id="structure-fees">
-      <div class="container grid grid-2">
-        <div class="reveal">
-          <h2>📅 Class Structure & Duration</h2>
-          <p><strong>Total Modules:</strong> 5 modules a year</p>
-          <p>
-            <strong>Lessons per Module:</strong> 8 tutorials + 1 recap = 9
-            lessons per module
-          </p>
-          <p>
-            <strong>Total Lessons per Year:</strong> 45 (with 7 weeks reserved
-            for festive holidays: Chinese New Year, Hari Raya, Deepavali,
-            Christmas + 3 flexible breaks)
-          </p>
-          <p><strong>Class Frequency:</strong> Once a week, every Thursday</p>
-          <p>
-            <strong>Course Duration:</strong> 7–12 modules (depending on
-            individual progress and certification pathway)
-          </p>
-        </div>
-        <div class="reveal">
-          <h2>💰 Course Fees</h2>
-          <p><strong>Payment method:</strong></p>
-          <table class="table" aria-describedby="fees-note">
-            <thead>
-              <tr>
-                <th>Plan</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Monthly Plan</td>
-                <td>RM 560 (4 lessons per month)</td>
-              </tr>
-              <tr>
-                <td>Per Module Plan</td>
-                <td>RM 1,170 (9 lessons per module)</td>
-              </tr>
-              <tr>
-                <td>Registration Fee</td>
-                <td>
-                  RM 180 (one-time)<br />✅ Waived for graduates of the 4Q
-                  Certification Course (Badge 2 receivers)
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="note" id="fees-note">
-            <button
-              class="btn btn-ghost"
-              type="button"
-              aria-describedby="todo-badge"
-              disabled
-              style="opacity: 0.6; cursor: not-allowed"
+      <!-- 5) OUTCOMES: What You’ll Gain (UQ/SQ/EQ/IQ/AQ as a band) -->
+      <section class="section">
+        <div class="container">
+          <h2 class="reveal">🎯 What You’ll Gain</h2>
+          <div class="grid grid-5">
+            <div class="card reveal">
+              <div class="icon" aria-hidden="true">UQ</div>
+              <p>
+                <strong>Deep Self-Mastery (UQ)</strong> – awareness of your
+                emotions, patterns, and potential. Build emotional clarity and
+                unlock your hidden potential.
+              </p>
+            </div>
+            <div class="card reveal">
+              <div class="icon" aria-hidden="true">SQ</div>
+              <p>
+                <strong>Strategic Planning & Empowerment (SQ)</strong> –
+                confidence to plan, learn how to empower yourself and others
+                with clarity.
+              </p>
+            </div>
+            <div class="card reveal">
+              <div class="icon" aria-hidden="true">EQ</div>
+              <p>
+                <strong>Emotional Intelligence (EQ)</strong> – empathy, conflict
+                resolution, and relationship mastery. Transform how you connect
+                in families, classrooms, and workplaces.
+              </p>
+            </div>
+            <div class="card reveal">
+              <div class="icon" aria-hidden="true">IQ</div>
+              <p>
+                <strong>Critical Thinking (IQ)</strong> – sharper
+                decision-making in parenting and professional life. Balance
+                professional roles with family leadership.
+              </p>
+            </div>
+            <div class="card reveal">
+              <div class="icon" aria-hidden="true">AQ</div>
+              <p>
+                <strong>Adaptability (AQ)</strong> – strength to embrace change
+                and overcome challenges. Learn to navigate uncertainty and turn
+                obstacles into opportunities.
+              </p>
+            </div>
+          </div>
+          <figure class="hero-details-figure">
+            <img
+              src="images/5Q_Brain.png"
+              alt="5Q Quantum Communication journey illustration"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="what-gain-actions">
+            <a class="btn btn-primary what-gain-cta" href="#interview-form"
+              >Book Interview</a
             >
-              Button: What is this badge 2 receivers? (this will do in future)
-            </button>
-            <span id="todo-badge" class="form-help"
-              >TODO: badge definition pending.</span
+          </div>
+        </div>
+      </section>
+
+      <!-- 6) CLASS STRUCTURE & FEES -->
+      <section class="section" id="structure-fees">
+        <div class="container grid grid-2">
+          <div class="reveal">
+            <h2>📅 Class Structure & Duration</h2>
+            <p><strong>Total Modules:</strong> 5 modules a year</p>
+            <p>
+              <strong>Lessons per Module:</strong> 8 tutorials + 1 recap = 9
+              lessons per module
+            </p>
+            <p>
+              <strong>Total Lessons per Year:</strong> 45 (with 7 weeks reserved
+              for festive holidays: Chinese New Year, Hari Raya, Deepavali,
+              Christmas + 3 flexible breaks)
+            </p>
+            <p><strong>Class Frequency:</strong> Once a week, every Thursday</p>
+            <p>
+              <strong>Course Duration:</strong> 7–12 modules (depending on
+              individual progress and certification pathway)
+            </p>
+          </div>
+          <div class="reveal">
+            <h2>💰 Course Fees</h2>
+            <p><strong>Payment method:</strong></p>
+            <table class="table" aria-describedby="fees-note">
+              <thead>
+                <tr>
+                  <th>Plan</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Monthly Plan</td>
+                  <td>RM 560 (4 lessons per month)</td>
+                </tr>
+                <tr>
+                  <td>Per Module Plan</td>
+                  <td>RM 1,170 (9 lessons per module)</td>
+                </tr>
+                <tr>
+                  <td>Registration Fee</td>
+                  <td>
+                    RM 180 (one-time)<br />✅ Waived for graduates of the 4Q
+                    Certification Course (Badge 2 receivers)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7) ADMISSION REQUIREMENT -->
+      <section class="section">
+        <div class="container card reveal">
+          <div style="display: flex; gap: 12px; align-items: flex-start">
+            <div class="icon" aria-hidden="true">✓</div>
+            <div>
+              <h2>📝 Admission Requirement</h2>
+              <p>
+                We want every participant to have the best possible experience
+                in the 5Q Quantum Communication and Social Science program.<br />That’s
+                why each applicant will be invited to a friendly assessment and
+                interview session before enrollment.
+              </p>
+              <p>This session is simply to:</p>
+              <ul>
+                <li>Understand your learning goals and expectations</li>
+                <li>
+                  Share how the course can best support your personal and
+                  professional growth
+                </li>
+                <li>
+                  Also see whether you feel ready to begin this transformative
+                  journey ✨
+                </li>
+              </ul>
+              <p>
+                👉 Please fill up the form below to book your interview
+                appointment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8) INTERVIEW BOOKING FORM -->
+      <section class="section" id="interview-form" aria-labelledby="form-title">
+        <div class="container">
+          <div class="reveal">
+            <header class="form-header">
+              <h2 id="form-title">Interview Booking Form</h2>
+              <p>
+                Share your details below and our team will reach out with the
+                next steps for your personalised interview session.
+              </p>
+            </header>
+
+            <!-- Set data-sheet-endpoint to your Google Apps Script web app URL -->
+            <form
+              id="applyForm"
+              novalidate
+              class="form-card"
+              aria-describedby="form-status"
+              data-sheet-endpoint=""
             >
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7) ADMISSION REQUIREMENT -->
-    <section class="section">
-      <div class="container card reveal">
-        <div style="display: flex; gap: 12px; align-items: flex-start">
-          <div class="icon" aria-hidden="true">✓</div>
-          <div>
-            <h2>📝 Admission Requirement</h2>
-            <p>
-              We want every participant to have the best possible experience in
-              the 5Q Quantum Communication and Social Science program.<br />That’s
-              why each applicant will be invited to a friendly assessment and
-              interview session before enrollment.
-            </p>
-            <p>This session is simply to:</p>
-            <ul>
-              <li>Understand your learning goals and expectations</li>
-              <li>
-                Share how the course can best support your personal and
-                professional growth
-              </li>
-              <li>
-                Also see whether you feel ready to begin this transformative
-                journey ✨
-              </li>
-            </ul>
-            <p>
-              👉 Please fill up the form below to book your interview
-              appointment.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8) INTERVIEW BOOKING FORM -->
-    <section class="section" id="interview-form" aria-labelledby="form-title">
-      <div class="container">
-        <h2 id="form-title" class="reveal">Interview Booking Form</h2>
-        <form
-          id="applyForm"
-          novalidate
-          class="card reveal"
-          aria-describedby="form-status"
-        >
-          <div class="form-grid">
-            <div>
-              <label for="name" class="req"
-                >Full Name (as per IC/Passport):</label
-              >
-              <input id="name" name="name" type="text" required />
-            </div>
-            <div>
-              <label for="whatsapp" class="req"
-                >Contact Number (WhatsApp):</label
-              >
-              <input
-                id="whatsapp"
-                name="whatsapp"
-                type="tel"
-                inputmode="tel"
-                required
-              />
-            </div>
-            <div>
-              <label for="email" class="req">Email Address:</label>
-              <input id="email" name="email" type="email" required />
-            </div>
-            <div>
-              <label for="age">Age:</label>
-              <input id="age" name="age" type="number" min="10" max="120" />
-            </div>
-            <div>
-              <label for="role"
-                >Current Role / Background:<br />(e.g. Parent, Educator,
-                Professional, Student)</label
-              >
-              <input id="role" name="role" type="text" />
-            </div>
-            <div>
-              <label for="motivation" class="req"
-                >Why are you interested in joining the 5Q Quantum Communication
-                and Social Science program?</label
-              >
-              <textarea
-                id="motivation"
-                name="motivation"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-          </div>
-
-          <div style="margin-top: var(--s-3)">
-            <fieldset style="border: 0; padding: 0; margin: 0">
-              <legend class="req" style="font-weight: 600; margin-bottom: 6px">
-                How did you hear about us?
-              </legend>
-              <div class="grid grid-3">
-                <label
-                  ><input
-                    type="radio"
-                    name="hear"
-                    value="Social Media"
+              <div class="form-grid form-grid-compact">
+                <div class="form-field">
+                  <label for="name" class="req"
+                    >Full Name (as per IC/Passport):</label
+                  >
+                  <input id="name" name="name" type="text" required />
+                </div>
+                <div class="form-field">
+                  <label for="whatsapp" class="req"
+                    >Contact Number (WhatsApp):</label
+                  >
+                  <input
+                    id="whatsapp"
+                    name="whatsapp"
+                    type="tel"
+                    inputmode="tel"
                     required
                   />
-                  Social Media</label
-                >
-                <label
-                  ><input type="radio" name="hear" value="Website" />
-                  Website</label
-                >
-                <label
-                  ><input type="radio" name="hear" value="Friend / Family" />
-                  Friend / Family</label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    name="hear"
-                    value="4Q Program Graduate"
-                  />
-                  4Q Program Graduate</label
-                >
-                <label
-                  ><input type="radio" name="hear" value="Other" /> Other</label
-                >
+                </div>
+                <div class="form-field">
+                  <label for="email" class="req">Email Address:</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div class="form-field">
+                  <label for="age">Age:</label>
+                  <input id="age" name="age" type="number" min="10" max="120" />
+                </div>
+                <div class="form-field">
+                  <label for="role"
+                    >Current Role / Background:<br />(e.g. Parent, Educator,
+                    Professional, Student)</label
+                  >
+                  <input id="role" name="role" type="text" />
+                </div>
+                <div class="form-field form-field-full">
+                  <label for="motivation" class="req"
+                    >Why are you interested in joining the 5Q Quantum
+                    Communication and Social Science program?</label
+                  >
+                  <textarea
+                    id="motivation"
+                    name="motivation"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
               </div>
-              <label for="hear-other" class="form-help">Other: </label>
-              <input id="hear-other" name="hear_other" type="text" />
-            </fieldset>
-          </div>
 
-          <div style="margin-top: var(--s-3)">
-            <h4>Interview Scheduling:</h4>
-            <p>We will WhatsApp you to arrange your interview slot.</p>
-            <label
-              style="
-                display: flex;
-                gap: 10px;
-                align-items: center;
-                margin-top: 8px;
-              "
-            >
-              <input type="checkbox" id="confirm" required />
-              <span class="req">“Yes, I understand.”</span>
-            </label>
-          </div>
-
-          <div id="form-status" class="form-msg" aria-live="polite"></div>
-          <div style="margin-top: var(--s-3)">
-            <button class="btn btn-primary" type="submit">SUBMIT</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- 9) WHY CHOOSE + FINNISH PRINCIPLES -->
-    <section class="section">
-      <div class="container">
-        <h2 class="reveal">🌟 Why Choose 5Q with Parents First?</h2>
-        <div class="card reveal">
-          <p>Because techniques fade, but transformation lasts.</p>
-          <p>
-            When you understand how people think, react, and connect at the
-            deepest level, you don’t just communicate better —<br />you lead,
-            inspire, and transform.
-          </p>
-          <p>
-            ✅ Community & Network – Connect with leaders, educators, and
-            parents who are shaping Malaysia’s next wave of human
-            development.<br />✅ Future-Ready – Learn the communication skills
-            that AI cannot replace — empathy, influence, and authentic human
-            connection.
-          </p>
-        </div>
-
-        <h2 class="reveal" style="margin-top: var(--s-6)">
-          🎓 Finnish Education Principles in Action
-        </h2>
-        <div class="grid grid-3">
-          <div class="card reveal">
-            <strong>Play Pedagogy</strong> – Learning through creativity,
-            role-play, and exploration.
-          </div>
-          <div class="card reveal">
-            <strong>Activity-Based Learning</strong> – Hands-on, practical
-            exercises directly connected to real life.
-          </div>
-          <div class="card reveal">
-            <strong>Experiential Reflection</strong> – Applying personal
-            challenges to practice resilience and growth.
-          </div>
-          <div class="card reveal">
-            <strong>Project-Based Learning (PBL)</strong> – Designing strategies
-            for families, classrooms, or workplaces.
-          </div>
-          <div class="card reveal">
-            <strong>Phenomenon-Based Learning (PhBL)</strong> – Exploring
-            complex, real-world phenomena like resilience, adaptation, and
-            cultural diversity.
-          </div>
-          <div class="card reveal">
-            This ensures that learning is not just theoretical — it is lived,
-            experienced, and internalized.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10) TAKE THE LEAP (CTA) -->
-    <section class="section cta-section">
-      <div class="container">
-        <div class="cta-card reveal">
-          <div class="cta-grid">
-            <figure class="cta-figure">
-              <img
-                src="images/city_kl.png"
-                alt="Kuala Lumpur city skyline at dusk representing the future of leadership"
-                loading="lazy"
-              />
-              <span class="cta-figure-glow" aria-hidden="true"></span>
-            </figure>
-            <div class="cta-content">
-              <h2>🚀 Take the Leap</h2>
-              <div class="cta-points">
-                <article class="cta-point">
-                  <span class="cta-icon" aria-hidden="true">🌌</span>
-                  <p>
-                    The world is shifting fast. AI can replace tasks and
-                    techniques, but not human empathy, connection, and
-                    adaptability.
-                  </p>
-                </article>
-                <article class="cta-point">
-                  <span class="cta-icon" aria-hidden="true">✨</span>
-                  <p>
-                    When you master 5Q Quantum Communication, you don’t just
-                    learn how to talk better — you learn how to lead, influence,
-                    and transform with authenticity.
-                  </p>
-                </article>
-                <article class="cta-point">
-                  <span class="cta-icon" aria-hidden="true">🌱</span>
-                  <p>
-                    When communication transforms, so does your career, your
-                    relationships, and your life.
-                  </p>
-                </article>
-                <article class="cta-point">
-                  <span class="cta-icon" aria-hidden="true">🚀</span>
-                  <p>
-                    The future belongs to those who understand people, not just
-                    systems.<br />Join the 5Q Quantum Communication and Social
-                    Science course and step into the next level of influence.
-                  </p>
-                </article>
-              </div>
-              <div class="cta-actions">
-                <a class="btn btn-primary" href="#interview-form"
-                  >Book Interview</a
+              <fieldset class="form-fieldset">
+                <legend class="req">How did you hear about us?</legend>
+                <div class="option-grid">
+                  <label class="option-tile"
+                    ><input
+                      type="radio"
+                      name="hear"
+                      value="Social Media"
+                      required
+                    />
+                    <span>Social Media</span></label
+                  >
+                  <label class="option-tile"
+                    ><input type="radio" name="hear" value="Website" />
+                    <span>Website</span></label
+                  >
+                  <label class="option-tile"
+                    ><input type="radio" name="hear" value="Friend / Family" />
+                    <span>Friend / Family</span></label
+                  >
+                  <label class="option-tile"
+                    ><input
+                      type="radio"
+                      name="hear"
+                      value="4Q Program Graduate"
+                    />
+                    <span>4Q Program Graduate</span></label
+                  >
+                  <label class="option-tile"
+                    ><input type="radio" name="hear" value="Other" />
+                    <span>Other</span></label
+                  >
+                </div>
+                <div
+                  id="hear-other-wrap"
+                  class="form-field slide-toggle is-hidden"
                 >
+                  <label for="hear-other" class="form-help">Other:</label>
+                  <input id="hear-other" name="hear_other" type="text" />
+                </div>
+
+                <div
+                  id="hear-friend-wrap"
+                  class="form-field slide-toggle is-hidden"
+                >
+                  <label for="hear-friend" class="form-help"
+                    >Friend / Family (who?)</label
+                  >
+                  <input id="hear-friend" name="hear_friend" type="text" />
+                </div>
+              </fieldset>
+
+              <div class="form-inset">
+                <h4>Interview Scheduling:</h4>
+                <p class="form-note">
+                  We will WhatsApp you to arrange your interview slot.
+                </p>
+                <label class="form-confirm">
+                  <input type="checkbox" id="confirm" required />
+                  <span class="req">“Yes, I understand.”</span>
+                </label>
+              </div>
+
+              <div id="form-status" class="form-msg" aria-live="polite"></div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">SUBMIT</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9) WHY CHOOSE + FINNISH PRINCIPLES -->
+      <section class="section">
+        <div class="container">
+          <h2 class="reveal">🌟 Why Choose 5Q with Parents First?</h2>
+          <div class="card reveal">
+            <p>Because techniques fade, but transformation lasts.</p>
+            <p>
+              When you understand how people think, react, and connect at the
+              deepest level, you don’t just communicate better —<br />you lead,
+              inspire, and transform.
+            </p>
+            <p>
+              ✅ Community & Network – Connect with leaders, educators, and
+              parents who are shaping Malaysia’s next wave of human
+              development.<br />✅ Future-Ready – Learn the communication skills
+              that AI cannot replace — empathy, influence, and authentic human
+              connection.
+            </p>
+          </div>
+
+          <h2 class="reveal" style="margin-top: var(--s-6)">
+            🎓 Finnish Education Principles in Action
+          </h2>
+          <div class="grid grid-3">
+            <div class="card reveal">
+              <strong>Play Pedagogy</strong> – Learning through creativity,
+              role-play, and exploration.
+            </div>
+            <div class="card reveal">
+              <strong>Activity-Based Learning</strong> – Hands-on, practical
+              exercises directly connected to real life.
+            </div>
+            <div class="card reveal">
+              <strong>Experiential Reflection</strong> – Applying personal
+              challenges to practice resilience and growth.
+            </div>
+            <div class="card reveal">
+              <strong>Project-Based Learning (PBL)</strong> – Designing
+              strategies for families, classrooms, or workplaces.
+            </div>
+            <div class="card reveal">
+              <strong>Phenomenon-Based Learning (PhBL)</strong> – Exploring
+              complex, real-world phenomena like resilience, adaptation, and
+              cultural diversity.
+            </div>
+            <div class="card reveal">
+              This ensures that learning is not just theoretical — it is lived,
+              experienced, and internalized.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10) TAKE THE LEAP (CTA) -->
+      <section class="section">
+        <div class="container">
+          <div class="reveal">
+            <div class="cta-grid">
+              <figure class="cta-figure">
+                <img
+                  src="images/city_kl.png"
+                  alt="Kuala Lumpur city skyline at dusk representing the future of leadership"
+                  loading="lazy"
+                />
+                <span class="cta-figure-glow" aria-hidden="true"></span>
+              </figure>
+              <div class="cta-content">
+                <h2>🚀 Take the Leap</h2>
+                <div class="cta-points">
+                  <article class="cta-point">
+                    <span class="cta-icon" aria-hidden="true">🌌</span>
+                    <p>
+                      The world is shifting fast. AI can replace tasks and
+                      techniques, but not human empathy, connection, and
+                      adaptability.
+                    </p>
+                  </article>
+                  <article class="cta-point">
+                    <span class="cta-icon" aria-hidden="true">✨</span>
+                    <p>
+                      When you master 5Q Quantum Communication, you don’t just
+                      learn how to talk better — you learn how to lead,
+                      influence, and transform with authenticity.
+                    </p>
+                  </article>
+                  <article class="cta-point">
+                    <span class="cta-icon" aria-hidden="true">🌱</span>
+                    <p>
+                      When communication transforms, so does your career, your
+                      relationships, and your life.
+                    </p>
+                  </article>
+                  <article class="cta-point">
+                    <span class="cta-icon" aria-hidden="true">🚀</span>
+                    <p>
+                      The future belongs to those who understand people, not
+                      just systems.<br />Join the 5Q Quantum Communication and
+                      Social Science course and step into the next level of
+                      influence.
+                    </p>
+                  </article>
+                </div>
+                <div class="cta-actions">
+                  <a class="btn btn-primary" href="#interview-form"
+                    >Book Interview</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="cta-mobile-bar reveal">
-        <span>Book your 5Q interview</span>
-        <a class="btn btn-primary" href="#interview-form">Book Interview</a>
-      </div>
-    </section>
+        <div class="cta-mobile-bar reveal">
+          <span>Book your 5Q interview</span>
+          <a class="btn btn-primary" href="#interview-form">Book Interview</a>
+        </div>
+      </section>
 
-    <!-- 11) FAQ -->
-    <section class="section" id="faq">
-      <div class="container">
-        <h2 class="reveal">Frequently Asked Questions (FAQ)</h2>
+      <!-- 11) FAQ -->
+      <section class="section" id="faq">
+        <div class="container">
+          <h2 class="reveal">Frequently Asked Questions (FAQ)</h2>
 
-        <details class="reveal">
-          <summary>
-            1. Do I need any background knowledge to join this course?
-          </summary>
-          <p>
-            No prior experience is required. The 5Q program is designed for
-            parents, educators, professionals, and anyone interested in personal
-            growth and communication. Our facilitators will guide you step by
-            step.
-          </p>
-        </details>
+          <details class="reveal">
+            <summary>
+              1. Do I need any background knowledge to join this course?
+            </summary>
+            <p>
+              No prior experience is required. The 5Q program is designed for
+              parents, educators, professionals, and anyone interested in
+              personal growth and communication. Our facilitators will guide you
+              step by step.
+            </p>
+          </details>
 
-        <details class="reveal">
-          <summary>2. Why do I need an interview before joining?</summary>
-          <p>The interview isn’t a test. It’s a friendly conversation to:</p>
-          <ul>
-            <li>Understand your learning goals</li>
-            <li>See how the program can best support you</li>
-            <li>Ensure you feel ready for the journey ahead</li>
-          </ul>
-          <p>This way, every participant starts on the right footing.</p>
-        </details>
+          <details class="reveal">
+            <summary>2. Why do I need an interview before joining?</summary>
+            <p>The interview isn’t a test. It’s a friendly conversation to:</p>
+            <ul>
+              <li>Understand your learning goals</li>
+              <li>See how the program can best support you</li>
+              <li>Ensure you feel ready for the journey ahead</li>
+            </ul>
+            <p>This way, every participant starts on the right footing.</p>
+          </details>
 
-        <details class="reveal">
-          <summary>3. How long is the course?</summary>
-          <p>
-            Each module has 9 lessons. With 5 modules a year, that’s 45 weeks of
-            learning.<br />Most students complete 7–12 modules, depending on
-            their pace and goals.
-          </p>
-        </details>
+          <details class="reveal">
+            <summary>3. How long is the course?</summary>
+            <p>
+              Each module has 9 lessons. With 5 modules a year, that’s 45 weeks
+              of learning.<br />Most students complete 7–12 modules, depending
+              on their pace and goals.
+            </p>
+          </details>
 
-        <details class="reveal">
-          <summary>4. How often are classes held?</summary>
-          <p>
-            Classes are once a week, every Thursday. This flexible schedule is
-            designed to fit into busy lives while maintaining consistent
-            progress.
-          </p>
-        </details>
+          <details class="reveal">
+            <summary>4. How often are classes held?</summary>
+            <p>
+              Classes are once a week, every Thursday. This flexible schedule is
+              designed to fit into busy lives while maintaining consistent
+              progress.
+            </p>
+          </details>
 
-        <details class="reveal">
-          <summary>5. What if I miss a class?</summary>
-          <p>
-            Don’t worry — recordings, notes, and make-up options are available
-            so you won’t fall behind.
-          </p>
-        </details>
+          <details class="reveal">
+            <summary>5. What if I miss a class?</summary>
+            <p>
+              Don’t worry — recordings, notes, and make-up options are available
+              so you won’t fall behind.
+            </p>
+          </details>
 
-        <details class="reveal">
-          <summary>6.Is this program online or physical?</summary>
-          <p>
-            The program is delivered online with live interactive classes. Some
-            hybrid opportunities may be offered at KL, Penang, or Johor centres.
-          </p>
-        </details>
+          <details class="reveal">
+            <summary>6.Is this program online or physical?</summary>
+            <p>
+              The program is delivered online with live interactive classes.
+              Some hybrid opportunities may be offered at KL, Penang, or Johor
+              centres.
+            </p>
+          </details>
 
-        <details class="reveal">
-          <summary>7. What certificate will I receive?</summary>
-          <p>
-            You’ll receive a Certificate of Completion for the 5Q Quantum
-            Communication and Social Science program accredited by CCE Finland,
-            which also qualifies you for progression into the Professional
-            Diploma in 6Q Quantum Communication and Social Science.
-          </p>
-        </details>
+          <details class="reveal">
+            <summary>7. What certificate will I receive?</summary>
+            <p>
+              You’ll receive a Certificate of Completion for the 5Q Quantum
+              Communication and Social Science program accredited by CCE
+              Finland, which also qualifies you for progression into the
+              Professional Diploma in 6Q Quantum Communication and Social
+              Science.
+            </p>
+          </details>
 
-        <details class="reveal">
-          <summary>
-            8. How is 5Q different from other communication programs?
-          </summary>
-          <p>
-            Most programs focus on surface techniques. 5Q goes deeper —
-            combining psychology, neuroscience, and social science with Finnish
-            education principles to help you master communication, resilience,
-            and leadership authentically.
-          </p>
-        </details>
+          <details class="reveal">
+            <summary>
+              8. How is 5Q different from other communication programs?
+            </summary>
+            <p>
+              Most programs focus on surface techniques. 5Q goes deeper —
+              combining psychology, neuroscience, and social science with
+              Finnish education principles to help you master communication,
+              resilience, and leadership authentically.
+            </p>
+          </details>
 
-        <details class="reveal">
-          <summary>9. How do I get started?</summary>
-          <p>
-            Simply fill up the Interview Booking Form below.<br />Our team will
-            WhatsApp you the interview guidelines and help you confirm your
-            appointment.
-          </p>
-        </details>
-      </div>
-    </section>
+          <details class="reveal">
+            <summary>9. How do I get started?</summary>
+            <p>
+              Simply fill up the Interview Booking Form below.<br />Our team
+              will WhatsApp you the interview guidelines and help you confirm
+              your appointment.
+            </p>
+          </details>
+        </div>
+      </section>
     </main>
 
-    <!-- 12) FOOTER -->
+    <!-- Footer -->
     <footer class="footer section" role="contentinfo">
-      <div class="container grid grid-3">
-        <div>
-          <strong>Contact</strong>
-          <p>Email: hello@parentsfirst.example</p>
-          <p>WhatsApp: +60-1X-XXXX-XXXX</p>
-        </div>
-        <div>
-          <strong>Social</strong>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="images/parents_first_logo1.png"
+            alt="Parents First"
+            width="140"
+            height="48"
+          />
           <p>
-            <a href="#" rel="nofollow">Facebook</a> ·
-            <a href="#" rel="nofollow">Instagram</a> ·
-            <a href="#" rel="nofollow">LinkedIn</a>
+            马来西亚首个国际认证的华语家庭教育课程，致力于帮助家长建立科学的育儿理念。
           </p>
         </div>
-        <div>
-          <strong>Legal</strong>
-          <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <span class="footer-contact-icon" aria-hidden="true">📞</span>
+              +6014-685 7273
+            </li>
+            <li>
+              <span class="footer-contact-icon" aria-hidden="true">✉️</span>
+              <a href="mailto:parentfirst2u@gmail.com"
+                >parentfirst2u@gmail.com</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
+
+      <div class="footer-meta">
+        <p>&copy; 2025 Parents First. Copyright All Rights Reserved.</p>
       </div>
     </footer>
 
