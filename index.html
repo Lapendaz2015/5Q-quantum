@@ -62,7 +62,7 @@
       </nav>
 
       <!-- 1) HERO -->
-      <header class="hero" aria-labelledby="hero-title">
+      <header class="section" aria-labelledby="hero-title">
         <div class="container">
           <div class="hero-gradient-overlay" aria-hidden="true"></div>
           <!-- Animated background bubbles (decorative) -->
@@ -70,6 +70,8 @@
             <span></span><span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span><span></span>
             <span></span><span></span><span></span><span></span><span></span>
           </div>
@@ -114,11 +116,21 @@
             
 
             <!-- Right: media -->
-            <div class="hero-media reveal">
+            <div class="reveal">
               <div class="hero-media-orbit" aria-hidden="true"></div>
               <figure class="hero-figure">
                 <img
                   src="images/ai-team.png"
+                  alt="Learners collaborating in a modern environment"
+                  loading="eager"
+                  decoding="async"
+                />
+                <span class="hero-glow" aria-hidden="true"></span>
+              </figure>
+
+              <figure class="hero-figure">
+                <img
+                  src="images/5q-car.png"
                   alt="Learners collaborating in a modern environment"
                   loading="eager"
                   decoding="async"
@@ -398,63 +410,89 @@
       </section>
 
       <!-- 5) OUTCOMES: What You’ll Gain (UQ/SQ/EQ/IQ/AQ as a band) -->
-      <section class="section">
+      <section class="section section-gains">
         <div class="container">
-          <h2 class="reveal">🎯 What You’ll Gain</h2>
-          <div class="grid grid-5">
-            <div class="card reveal">
-              <div class="icon" aria-hidden="true">UQ</div>
-              <p>
-                <strong>Deep Self-Mastery (UQ)</strong> – awareness of your
-                emotions, patterns, and potential. Build emotional clarity and
-                unlock your hidden potential.
-              </p>
+          <div class="gains-container">
+            <div class="gains-header">
+              <h2 class="reveal">🎯 What You’ll Gain</h2>
             </div>
-            <div class="card reveal">
-              <div class="icon" aria-hidden="true">SQ</div>
-              <p>
-                <strong>Strategic Planning & Empowerment (SQ)</strong> –
-                confidence to plan, learn how to empower yourself and others
-                with clarity.
-              </p>
-            </div>
-            <div class="card reveal">
-              <div class="icon" aria-hidden="true">EQ</div>
-              <p>
-                <strong>Emotional Intelligence (EQ)</strong> – empathy, conflict
-                resolution, and relationship mastery. Transform how you connect
-                in families, classrooms, and workplaces.
-              </p>
-            </div>
-            <div class="card reveal">
-              <div class="icon" aria-hidden="true">IQ</div>
-              <p>
-                <strong>Critical Thinking (IQ)</strong> – sharper
-                decision-making in parenting and professional life. Balance
-                professional roles with family leadership.
-              </p>
-            </div>
-            <div class="card reveal">
-              <div class="icon" aria-hidden="true">AQ</div>
-              <p>
-                <strong>Adaptability (AQ)</strong> – strength to embrace change
-                and overcome challenges. Learn to navigate uncertainty and turn
-                obstacles into opportunities.
-              </p>
-            </div>
-          </div>
-          <figure class="hero-details-figure">
-            <img
-              src="images/5Q_Brain.png"
-              alt="5Q Quantum Communication journey illustration"
-              loading="lazy"
-            />
-          </figure>
 
-          <div class="what-gain-actions">
-            <a class="btn btn-primary what-gain-cta" href="#interview-form"
-              >Book Interview</a
-            >
+            <div class="gains-layout">
+              <div class="gains-list">
+                <article class="gains-card reveal">
+                 
+                  <div class="gains-copy">
+                    <h3>Deep Self-Mastery (UQ)</h3>
+                    <p>
+                      – awareness of your emotions, patterns, and potential. Build
+                      emotional clarity and unlock your hidden potential.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="gains-card reveal">
+              
+                  <div class="gains-copy">
+                    <h3>Strategic Planning &amp; Empowerment (SQ)</h3>
+                    <p>
+                      – confidence to plan, learn how to empower yourself and others
+                      with clarity.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="gains-card reveal">
+            
+                  <div class="gains-copy">
+                    <h3>Emotional Intelligence (EQ)</h3>
+                    <p>
+                      – empathy, conflict resolution, and relationship mastery.
+                      Transform how you connect in families, classrooms, and
+                      workplaces.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="gains-card reveal">
+                 
+                  <div class="gains-copy">
+                    <h3>Critical Thinking (IQ)</h3>
+                    <p>
+                      – sharper decision-making in parenting and professional life.
+                      Balance professional roles with family leadership.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="gains-card reveal">
+             
+                  <div class="gains-copy">
+                    <h3>Adaptability (AQ)</h3>
+                    <p>
+                      – strength to embrace change and overcome challenges. Learn to
+                      navigate uncertainty and turn obstacles into opportunities.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+
+            <div class="gains-visual reveal">
+              <figure>
+                <img
+                  src="images/5Q_Brain.png"
+                  alt="5Q Quantum Communication journey illustration"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+
+            <div class="gains-cta-wrap reveal">
+              <a class="btn btn-primary what-gain-cta" href="#interview-form"
+                >Book Interview</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -752,7 +790,7 @@
                 />
                 <span class="cta-figure-glow" aria-hidden="true"></span>
               </figure>
-              <div class="cta-content">
+              <div class="cta-content reveal">
                 <h2>🚀 Take the Leap</h2>
                 <div class="cta-points">
                   <article class="cta-point">
