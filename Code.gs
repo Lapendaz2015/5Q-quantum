@@ -85,6 +85,8 @@ function doPost(e) {
       payload.hear_other || "",
       payload.hear_friend || "",
       payload.page_url || "",
+      payload.referrer || "",
+      submissionId || "",
     ];
 
     sheet.appendRow(row);
@@ -173,6 +175,8 @@ function getOrCreateSheet(name) {
       "Hear Other",
       "Friend/Family (who)",
       "Page URL",
+      "Referrer",
+      "Submission ID",
     ]);
   }
 
@@ -190,6 +194,21 @@ function jsonResponse(obj, status) {
     JSON.stringify(obj)
   ).setMimeType(ContentService.MimeType.JSON);
 
+  // Attempt to set CORS-friendly headers when possible
+  if (typeof output.setHeaders === "function") {
+    try {
+      // Not all runtimes expose setHeaders on TextOutput; guard just in case
+      output.setHeaders({
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+        Vary: "Origin",
+      });
+    } catch (e) {
+      // ignore if unsupported
+    }
+  }
+
   // Web apps default to 200; set explicit status with HtmlOutput meta.
   if (typeof output.setHttpStatus === "function") {
     output.setHttpStatus(status);
@@ -197,6 +216,9 @@ function jsonResponse(obj, status) {
     // Fallback for older runtime: wrap JSON in HtmlOutput to set status.
     const html = HtmlService.createHtmlOutput(JSON.stringify(obj));
     html.setTitle(String(status));
+    try {
+      html.addMetaTag("Access-Control-Allow-Origin", "*");
+    } catch (e) {}
     return html;
   }
 

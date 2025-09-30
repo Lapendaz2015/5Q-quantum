@@ -233,9 +233,13 @@
 
     try{
       setSubmittingState(true);
-      // If running locally (file:// or localhost), use a single opaque POST to avoid CORS console errors
+      // Decide delivery strategy: if cross-origin (Apps Script) or local dev, send a single opaque (no-cors) POST.
+      // This avoids a second fallback send when the first simple request is blocked by CORS but already reached the server.
+      const targetOrigin = (()=>{ try{ return new URL(SHEET_ENDPOINT).origin; } catch(_){ return ""; }})();
       const isLocalEnv = location.protocol === "file:" || location.origin === "null" || location.hostname === "localhost" || location.hostname === "127.0.0.1";
-      if(isLocalEnv){
+      const crossOrigin = !!targetOrigin && targetOrigin !== location.origin;
+
+      if(isLocalEnv || crossOrigin){
         try{
           await fetch(SHEET_ENDPOINT, {
             method: "POST",
@@ -247,12 +251,14 @@
           form.reset();
           fieldsToReset.forEach(clearFieldState);
           toggleHearOther();
-          return; // Skip further attempts to prevent duplicates
-        } catch(_localErr){
-          // fall through to standard path below
+          return; // Single send; rely on backend idempotency if retried
+        } catch(_opaqueErr){
+          // If even opaque fails, show an error
+          throw _opaqueErr;
         }
       }
-      // 1) Prefer simple CORS request (no preflight) using text/plain
+
+      // 1) Same-origin only: prefer simple CORS request (no preflight) using text/plain
       let response = await fetch(SHEET_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=UTF-8" },
