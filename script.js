@@ -10,6 +10,65 @@
     setTimeout(finishLoading, 6000);
   }
 
+  // Lightbox: click any image to view full size
+  (function initLightbox(){
+    // Create overlay lazily on first use
+    let overlay;
+    function buildOverlay(){
+      overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.innerHTML = `
+        <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image preview">
+          <button class="lightbox-close" aria-label="Close">✕</button>
+          <img class="lightbox-img" alt="" />
+        </div>`;
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', (e)=>{
+        if(e.target === overlay || e.target.classList.contains('lightbox-close')){ close(); }
+      });
+      document.addEventListener('keydown',(e)=>{
+        if(overlay && overlay.classList.contains('is-open') && e.key === 'Escape'){ close(); }
+      });
+    }
+    function open(src, alt){
+      if(!overlay){ buildOverlay(); }
+      const img = overlay.querySelector('.lightbox-img');
+      img.src = src;
+      img.alt = alt || '';
+      overlay.classList.add('is-open');
+      document.body.classList.add('lightbox-open');
+      // Focus close for accessibility
+      const closeBtn = overlay.querySelector('.lightbox-close');
+      if(closeBtn){ closeBtn.focus({preventScroll:true}); }
+    }
+    function close(){
+      if(!overlay){ return; }
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('lightbox-open');
+    }
+    // Delegate clicks on all images
+    document.addEventListener('click',(e)=>{
+      const img = e.target.closest('img');
+      if(!img) return;
+      // Ignore if image is part of a link already opening something
+      const link = img.closest('a');
+      if(link && link.getAttribute('href')) return;
+      // Only react to left-click or keyboard activation
+      if(e.button !== 0 && e.type === 'click') return;
+      e.preventDefault();
+      open(img.currentSrc || img.src, img.alt);
+    });
+    // Keyboard accessibility: allow Enter on focused images
+    document.addEventListener('keydown',(e)=>{
+      if(e.key !== 'Enter') return;
+      const active = document.activeElement;
+      if(active && active.tagName === 'IMG'){
+        e.preventDefault();
+        open(active.currentSrc || active.src, active.alt);
+      }
+    });
+  })();
+
   const form = document.getElementById("applyForm");
   if(!form){ return; }
 
