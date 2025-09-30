@@ -128,7 +128,7 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
 .nav-section > .container{padding:var(--s-2) var(--s-3); background:transparent; border:none; box-shadow:none}
 .nav-section > .container::before{display:none}
 .nav-section::after{display:none}
-.nav-card{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:var(--s-2); padding:10px var(--s-3); border-radius:calc(var(--radius) * 1.05); background:linear-gradient(140deg, rgba(255,255,255,0.97), rgba(236,242,255,0.93)); border:1px solid rgba(39,67,218,0.14); box-shadow:0 10px 24px rgba(39,67,218,0.1)}
+.nav-card{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:var(--s-2); padding:10px var(--s-3); border-radius:calc(var(--radius) * 1.05); background:linear-gradient(140deg, rgba(255,255,255,0.97), rgba(236,242,255,0.93)); border:1px solid rgba(39,67,218,0.14); box-shadow:0 10px 24px rgba(39,67,218,0.1); width:100%}
 .nav-logo img{display:block; width:120px; max-width:100%; height:auto}
 .nav-title{
   font-family:"Playfair Display", Georgia, "Times New Roman", serif;
@@ -151,7 +151,7 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
   animation:navTitlePulse 8s ease-in-out infinite;
   text-shadow:0 8px 24px rgba(142,197,252,0.35);
 }
-.nav-cta{padding-inline:var(--s-2); white-space:nowrap}
+.nav-cta{padding-inline:var(--s-2); white-space:nowrap; justify-self:end; margin-left:auto}
 @media (max-width:767px){
   .nav-card{grid-template-columns:auto auto; justify-content:space-between}
   .nav-title{display:none}
