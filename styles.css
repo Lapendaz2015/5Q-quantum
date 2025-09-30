@@ -157,7 +157,7 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
   .nav-title{display:none}
 }
 .hero{position:relative; overflow:hidden; background:linear-gradient(135deg, #f2f6ff 0%, #e6ecff 45%, #f8f4ff 100%); color:#0f1a45}
-.hero.section{padding-block:clamp(var(--s-5), 6vw, var(--s-6))}
+.hero.section{padding-block:clamp(var(--s-5), 6vw, var(--s-6)); padding:0px;}
 .hero::before, .hero::after{content:""; position:absolute; pointer-events:none; filter:blur(120px)}
 .hero::before{top:-28%; left:-18%; width:720px; height:720px; background:radial-gradient(closest-side, rgba(122,108,255,0.38), rgba(122,108,255,0)); opacity:.65; animation:heroGlow 18s ease-in-out infinite alternate}
 .hero::after{bottom:-30%; right:-22%; width:780px; height:780px; background:radial-gradient(closest-side, rgba(255,193,133,0.32), rgba(255,193,133,0)); opacity:.5; animation:heroGlow 22s ease-in-out infinite alternate-reverse}
