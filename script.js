@@ -72,7 +72,7 @@
   const form = document.getElementById("applyForm");
   if(!form){ return; }
 
-  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzomrKxkfzT19AFQbA48mhURBcbHWo_YBgHWnFdF6T6iwxGkIuJPLKpD58MjBtUZWmJHA/exec"; // Replace with your Apps Script URL.
+  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbycngS4Qc7kRKZkOkp1e7CgVOFj6WmgMij_bXnZYmdVtBqgsr3TXTQNVa6Vb7kWE-FO/exec"; // Replace with your Apps Script URL.
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if(!prefersReduced && "IntersectionObserver" in window){
