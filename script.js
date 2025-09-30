@@ -69,6 +69,34 @@
     });
   })();
 
+  // Parallax tilt for hero/CTA figures (non-touch, not reduced-motion)
+  (function initTilt(){
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouch = matchMedia('(pointer: coarse)').matches;
+    if(prefersReduced || isTouch) return;
+    const els = document.querySelectorAll('.hero-figure, .cta-figure');
+    els.forEach(el=>{
+      const handle = (e)=>{
+        const rect = el.getBoundingClientRect();
+        const cx = rect.left + rect.width/2;
+        const cy = rect.top + rect.height/2;
+        const dx = (e.clientX - cx) / rect.width; // -0.5..0.5
+        const dy = (e.clientY - cy) / rect.height;
+        const max = 6; // deg
+        const tiltY = Math.max(-max, Math.min(max, dx * max * 2));
+        const tiltX = Math.max(-max, Math.min(max, -dy * max * 2));
+        el.style.setProperty('--tiltX', tiltX.toFixed(2) + 'deg');
+        el.style.setProperty('--tiltY', tiltY.toFixed(2) + 'deg');
+      };
+      const reset = ()=>{
+        el.style.setProperty('--tiltX', '0deg');
+        el.style.setProperty('--tiltY', '0deg');
+      };
+      el.addEventListener('mousemove', handle);
+      el.addEventListener('mouseleave', reset);
+    });
+  })();
+
   const form = document.getElementById("applyForm");
   if(!form){ return; }
 
