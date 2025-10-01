@@ -97,6 +97,33 @@
     });
   })();
 
+  // Reveal bootstrap (runs regardless of form presence)
+  (function(){
+    document.documentElement.classList.add('js-reveal');
+    const nodes = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+      }, {threshold:0.1});
+      nodes.forEach(el=>io.observe(el));
+    } else {
+      nodes.forEach(el=>el.classList.add('show'));
+    }
+  })();
+
+  // Service Worker: ensure users always get the latest version
+  (function registerSW(){
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js?v=20251001').catch(()=>{});
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'NEW_SW_ACTIVATED') {
+          // Hard refresh to ensure brand new version loads
+          window.location.reload();
+        }
+      });
+    }
+  })();
+
   const form = document.getElementById("applyForm");
   if(!form){ return; }
 

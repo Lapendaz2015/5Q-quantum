@@ -404,6 +404,10 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
   .hero-bubbles span{animation:none}
   .hero-heading .accent{animation:none; transform:none}
   .hero-media-orbit{animation:none}
+  /* Ensure hero titles never stay hidden if animations are disabled */
+  .hero-title,
+  .hero-title-sub,
+  .hero-description{animation:none !important; opacity:1 !important; transform:none !important}
   /* Make benefits list instantly visible without animation */
   .hero-details.reveal{opacity:1; transform:none}
   .hero-details.reveal.show ul li{animation:none; opacity:1; transform:none}
@@ -661,8 +665,11 @@ details{
 details + details{margin-top:var(--s-2)}
 summary{cursor:pointer; font-weight:700; color:#111831; display:flex; align-items:center; gap:var(--s-2)}
 summary:focus-visible{outline:3px solid rgba(155,109,247,0.32); border-radius:12px}
-.reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
-.reveal.show{opacity:1; transform:none}
+.reveal{opacity:1; transform:none; transition:opacity .6s ease, transform .6s ease}
+.js-reveal .reveal{opacity:0; transform:translateY(14px)}
+.js-reveal .reveal.show{opacity:1; transform:none}
+/* Always-visible reveals: allow marking critical content to bypass animation gating */
+.js-reveal .reveal[data-instant]{opacity:1 !important; transform:none !important}
 /* FAQ: animate content under summary */
 #faq details > *:not(summary){opacity:0; transform:translateY(-6px); transition:opacity .25s ease, transform .25s ease}
 #faq details[open] > *:not(summary){opacity:1; transform:none}
