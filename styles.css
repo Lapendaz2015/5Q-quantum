@@ -170,6 +170,8 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
   display:flex;
   align-items:center;
   justify-content:center;
+  /* Fallback padding for older browsers (overridden by clamp below if supported) */
+  padding:48px 24px;
   padding:clamp(var(--s-5), 5.5vw, var(--s-6)) clamp(var(--s-4), 5vw, var(--s-6));
   background:transparent;
   border:none;
@@ -219,7 +221,7 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
   100%{transform:translate3d(12px,-130vh,0) scale(0.95); opacity:0}
 }
 .hero-grid{position:relative; display:grid; gap:clamp(var(--s-3), 2.6vw, var(--s-4)); align-items:stretch; width:100%; max-width:1180px; margin:0 auto; padding:0 clamp(var(--s-2), 6vw, var(--s-3)); z-index:1}
-.hero-copy{position:relative; display:grid; gap:clamp(var(--s-3), 2vw, var(--s-3)); padding:clamp(var(--s-3), 2.4vw, var(--s-4)); border-radius:calc(var(--radius) * 1.6); background:linear-gradient(160deg, rgba(255,255,255,0.94) 0%, rgba(233,238,255,0.9) 64%, rgba(226,232,255,0.88) 100%); border:1px solid rgba(39,67,218,0.14); backdrop-filter:blur(18px); box-shadow:0 26px 58px rgba(25,49,140,0.16); text-align:center; justify-items:center}
+.hero-copy{position:relative; display:grid; gap:clamp(var(--s-3), 2vw, var(--s-3)); padding:clamp(var(--s-3), 2.4vw, var(--s-4)); border-radius:calc(var(--radius) * 1.6); background:linear-gradient(160deg, rgba(255,255,255,0.94) 0%, rgba(233,238,255,0.9) 64%, rgba(226,232,255,0.88) 100%); border:1px solid rgba(39,67,218,0.14); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); box-shadow:0 26px 58px rgba(25,49,140,0.16); text-align:center; justify-items:center}
 .hero-copy::before{content:""; position:absolute; inset:-18px; border-radius:inherit; background:linear-gradient(135deg, rgba(122,108,255,0.22), rgba(255,193,133,0.18)); opacity:0.4; z-index:-1; filter:blur(18px)}
 .hero-copy p{color:#33406b}
 .hero-heading{display:grid; gap:var(--s-2); width:100%}
@@ -344,6 +346,12 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
 .hero-figure, .cta-figure{transform:perspective(800px) rotateX(var(--tiltX, 0deg)) rotateY(var(--tiltY, 0deg)); transition:transform .35s ease}
 .hero-figure::before{content:""; position:absolute; inset:-18% -20% 32%; border-radius:45%; background:radial-gradient(closest-side, rgba(122,108,255,0.32), rgba(122,108,255,0)); opacity:0.65; mix-blend-mode:screen}
 .hero-figure img{display:block; width:100%; height:100%; object-fit:cover}
+/* Safari < 14 fallback where aspect-ratio is unsupported */
+@supports not (aspect-ratio: 1 / 1){
+  .hero-figure{position:relative}
+  .hero-figure::after{content:""; display:block; padding-top:80%}
+  .hero-figure img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+}
 .hero-glow{position:absolute; inset:0; background:radial-gradient(140% 120% at 80% 10%, rgba(122,108,255,0.38), rgba(255,193,133,0.26) 40%, rgba(122,108,255,0.08) 70%, transparent 100%); mix-blend-mode:screen; opacity:0.6; pointer-events:none}
 .cta-section{position:relative; overflow:hidden; background:linear-gradient(135deg, rgba(246,249,255,1) 0%, rgba(232,239,255,0.96) 45%, rgba(220,232,255,0.92) 100%)}
 .cta-section > .container{padding:0; background:transparent; border:none; box-shadow:none}

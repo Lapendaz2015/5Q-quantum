@@ -109,6 +109,11 @@
     } else {
       nodes.forEach(el=>el.classList.add('show'));
     }
+    // Older Safari fallback: if after a short delay nothing is revealed, force show
+    setTimeout(()=>{
+      const anyShown = Array.from(nodes).some(n=>n.classList.contains('show'));
+      if(!anyShown){ nodes.forEach(el=>el.classList.add('show')); }
+    }, 600);
   })();
 
   // Service Worker: ensure users always get the latest version
