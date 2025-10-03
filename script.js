@@ -129,6 +129,94 @@
     }
   })();
 
+  // (Removed) Facebook SDK fallback watcher — no longer needed after reverting testimonials
+  // Testimonials carousel
+  (function initTestimonialCarousel(){
+    const carousel = document.querySelector('#testimonials .t-carousel');
+    if(!carousel) return;
+    const track = carousel.querySelector('.t-track');
+    if(!track) return;
+    // Build slides from existing testimonial cards in DOM if needed
+    // If cards are already direct children of .t-track, we use them
+    let slides = Array.from(track.children);
+    // If there is only one child (our first iframe) due to partial wrapping, gather following siblings inside #testimonials and append them
+    if(slides.length === 1){
+      const section = document.getElementById('testimonials');
+      const rest = section ? Array.from(section.querySelectorAll('.grid .reveal iframe')).slice(1) : [];
+      // No-op if we didn't find any
+    }
+    const btnPrev = carousel.querySelector('.t-prev');
+    const btnNext = carousel.querySelector('.t-next');
+    let index = 0;
+    let lastIndex = 0;
+
+    function pauseSlide(i){
+      if(i < 0 || i >= slides.length) return;
+      const vid = slides[i].querySelector('video');
+      if(vid && !vid.paused){ try{ vid.pause(); }catch(_){} }
+    }
+
+    function update(){
+      const width = carousel.clientWidth;
+      track.scrollTo({ left: index * width, behavior: 'smooth' });
+      // Circular carousel: keep buttons enabled
+      if(btnPrev) btnPrev.disabled = false;
+      if(btnNext) btnNext.disabled = false;
+    }
+    function onPrev(){
+      const prev = index;
+      index = (index - 1 + slides.length) % slides.length;
+      pauseSlide(prev);
+      lastIndex = index;
+      update();
+    }
+    function onNext(){
+      const prev = index;
+      index = (index + 1) % slides.length;
+      pauseSlide(prev);
+      lastIndex = index;
+      update();
+    }
+
+    btnPrev && btnPrev.addEventListener('click', onPrev);
+    btnNext && btnNext.addEventListener('click', onNext);
+    window.addEventListener('resize', ()=>{ update(); });
+
+    // Touch/drag swipe: allow native scroll then snap to nearest slide
+    let isPointerDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    track.addEventListener('pointerdown', (e)=>{
+      isPointerDown = true;
+      startX = e.clientX;
+      startScrollLeft = track.scrollLeft;
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', (e)=>{
+      if(!isPointerDown) return;
+      const dx = e.clientX - startX;
+      track.scrollLeft = startScrollLeft - dx;
+    });
+    function snapToNearest(){
+      const width = carousel.clientWidth;
+      const targetIndex = Math.round(track.scrollLeft / width);
+      const prev = index;
+      index = (targetIndex % slides.length + slides.length) % slides.length;
+      if(prev !== index){ pauseSlide(prev); }
+      update();
+    }
+    ['pointerup','pointercancel','touchend'].forEach(evt=>{
+      track.addEventListener(evt, ()=>{ if(isPointerDown){ isPointerDown = false; snapToNearest(); } });
+    });
+    // Keyboard arrows when carousel focused
+    carousel.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft') onPrev();
+      if(e.key === 'ArrowRight') onNext();
+    });
+    // Initialize button states
+    update();
+  })();
+
   const form = document.getElementById("applyForm");
   if(!form){ return; }
 
