@@ -494,6 +494,27 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
   .hero-media::before{inset:-12% -18% -16% -18%}
   .hero-media-orbit{width:min(84vw, 440px); height:min(84vw, 440px)}
   .hero-figure{width:min(80vw, 420px)}
+
+  /* --- MOBILE ALIGNMENT FIXES --- */
+  /* Remove decorative vertical accent that was nudged left and could create visual misalignment */
+  .section::after{display:none}
+  /* Reduce double horizontal padding (section + container). This keeps content visually centered and full */
+  .section{padding-left:var(--s-1); padding-right:var(--s-1)}
+  .section > .container{
+    margin-left:0; margin-right:0; width:100%;
+    padding:clamp(var(--s-4), 6vw, var(--s-5)) clamp(var(--s-3), 6vw, var(--s-4));
+    border-radius:20px;
+  }
+  /* For visually dense sections, slightly tighten internal card padding */
+  .card{padding:clamp(var(--s-3), 6vw, var(--s-4))}
+  /* Ensure grids do not introduce phantom overflow */
+  .grid, .gains-list, .benefits-list{margin:0}
+  /* Prevent any child using calc() or transforms from causing horizontal scroll */
+  .page-shell, main, body{overflow-x:hidden}
+  /* Testimonials: remove side padding inside slide to align video flush with container radius */
+  .t-card{padding:var(--s-2) var(--s-2)}
+  /* Footer sticky CTA bar: align with new reduced page gutters */
+  .cta-mobile-bar{margin-left:var(--s-1); margin-right:var(--s-1)}
 }
 @media (max-width:640px){
   .grid{gap:clamp(var(--s-3), 6vw, var(--s-3))}
