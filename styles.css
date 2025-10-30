@@ -320,9 +320,9 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
 .gains-cta-wrap .btn{min-width:220px; text-align: center;}
 .hero-details-buttons{display:flex; justify-content:flex-end; gap:var(--s-2); flex-wrap:wrap; margin-top:var(--s-2)}
 .hero-details-cta{white-space:nowrap}
-.hero-benefits{position:relative; overflow:hidden}
+.hero-benefits{position:relative; /* allow children to escape decorative overlap on small screens */ overflow:visible; z-index:3}
 .hero-benefits::before{content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(39,67,218,0.08), rgba(122,86,255,0.06)); opacity:0.8; pointer-events:none}
-.hero-benefits .container{position:relative; background:linear-gradient(150deg, rgba(255,255,255,0.96) 0%, rgba(239,244,255,0.94) 60%, rgba(232,239,255,0.9) 100%); border:1px solid rgba(39,67,218,0.12); box-shadow:0 26px 54px rgba(25,49,140,0.12); border-radius:calc(var(--radius) * 1.5)}
+.hero-benefits .container{position:relative; z-index:4; background:linear-gradient(150deg, rgba(255,255,255,0.96) 0%, rgba(239,244,255,0.94) 60%, rgba(232,239,255,0.9) 100%); border:1px solid rgba(39,67,218,0.12); box-shadow:0 26px 54px rgba(25,49,140,0.12); border-radius:calc(var(--radius) * 1.5)}
 .benefits-header{display:grid; gap:8px; text-align:center; padding:clamp(var(--s-4), 4vw, var(--s-5)) clamp(var(--s-4), 4vw, var(--s-5)) var(--s-2)}
 .benefits-eyebrow{display:inline-flex; align-items:center; justify-content:center; gap:10px; margin:0 auto; padding:6px 16px; border-radius:999px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; font-size:0.72rem; color:#24328a; background:rgba(39,67,218,0.12); border:1px solid rgba(39,67,218,0.16)}
 .benefits-header h2{margin:6px 0 0; color:#0f1a45}
@@ -572,6 +572,29 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
   .hero-grid{gap:clamp(var(--s-2), 6vw, var(--s-3))}
   .hero-actions{justify-content:center}
   .hero-actions .btn{width:100%}
+}
+
+/* --- Mobile-only: stronger stacking overrides to ensure hero decorations
+   don't visually cover the following content (e.g., "Who Should Join").
+   These use !important to reliably override decorative z-index values on
+   narrow viewports while keeping desktop behavior unchanged. */
+@media (max-width:640px){
+  .hero::before,
+  .hero::after,
+  .hero-bubbles,
+  .hero-media-orbit,
+  .hero-details::before,
+  .hero-details::after{
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Ensure the hero itself doesn't create a higher stacking context */
+  .hero{z-index:0 !important}
+
+  /* Force hero-benefits to sit above hero decorations on mobile */
+  .hero-benefits{overflow:visible !important; z-index:60 !important}
+  .hero-benefits .container{z-index:70 !important}
 }
 
 @keyframes heroGlow{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(0,-8px,0)}}
