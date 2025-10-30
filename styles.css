@@ -15,7 +15,7 @@
 
   --radius:18px;
   --shadow-lg: 0 20px 45px rgba(22, 38, 120, 0.16);
-  --shadow-card: 0 26px 60px rgba(39, 67, 218, 0.18);
+  --shadow-card: 0 26px 60px rgba(39,67,218,0.18);
 
   --s-1:8px; --s-2:16px; --s-3:24px; --s-4:32px;
   --s-5:40px; --s-6:52px; --s-7:72px; --s-8:104px;
@@ -786,68 +786,66 @@ summary:focus-visible{outline:3px solid rgba(155,109,247,0.32); border-radius:12
 .section .card h2{position:relative; text-align:center}
 .section .card h2::after{content:""; display:block; width:72px; height:5px; border-radius:999px; background:var(--grad-brand); margin:8px auto 0; opacity:0.95}
 
-/* --- Utilities: smooth slide/opacity toggle --- */
-.slide-toggle{display:block; transition:opacity .22s ease, transform .22s ease, margin .22s ease, max-height .22s ease; transform-origin:top; max-height:200px}
-.slide-toggle.is-hidden{display:none; opacity:0; transform:translateY(-4px); max-height:0 !important; margin-top:0 !important; pointer-events:none; visibility:hidden; overflow:hidden}
-label[for='hear-other'].slide-toggle{margin-top:8px}
-#hear-other.slide-toggle{margin-top:6px}
+/* -------------------------------------------------------------------------
+   Who Should Join — scoped section styling
+   This block keeps the visual look consistent with other sections while
+   removing decorative pseudo-elements and ensuring stable stacking on
+   older iOS / mobile browsers. Scoped to `.who-join-reset`.
+   ------------------------------------------------------------------------- */
+.who-join-reset{position:relative; z-index:120; overflow:visible}
+/* remove any pseudo-element decorations that might overlap */
+.who-join-reset::before,
+.who-join-reset::after,
+.who-join-reset .container::before,
+.who-join-reset .container::after,
+.who-join-reset .hero-bubbles,
+.who-join-reset .hero-media-orbit,
+.who-join-reset .hero-details::before,
+.who-join-reset .hero-details::after{
+  display:none !important;
+  content:none !important;
+  background:none !important;
+  pointer-events:none !important;
+}
 
-/* --- Section: What You'll Learn (#learn) --- */
-#learn{position:relative}
-#learn::before{content:""; position:absolute; top:12px; right:clamp(12px,4vw,48px); width:120px; height:120px; background:url("images/parents_first_logo1.png") no-repeat center/contain; opacity:0.06; filter:grayscale(100%) contrast(0.9); pointer-events:none}
-#learn > .container{backdrop-filter:saturate(1.05) blur(0.5px)}
-#learn h2{position:relative; color:#0f1a45}
-#learn h2::after{content:""; display:block; width:82px; height:6px; border-radius:999px; background:var(--grad-brand); margin-top:10px; box-shadow:0 6px 16px rgba(39,67,218,0.25)}
-#learn > .container > p{font-size:var(--fs-18); color:#2a3568}
-#learn > .container > p{max-width:720px}
-#learn .grid{gap:var(--s-3)}
-#learn .card{height:100%; min-height:220px; display:grid; gap:10px; padding:calc(var(--s-4) - 2px) var(--s-4); border-radius:calc(var(--radius) * 1.1); border-color:rgba(39,67,218,0.18); box-shadow:0 20px 40px rgba(15,24,64,0.14); transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
-#learn .card::before{content:""; position:absolute; left:12px; right:12px; top:0; height:4px; border-radius:0 0 999px 999px; background:var(--grad-brand); opacity:0.8}
-#learn .card h3{margin:2px 0 6px; color:#142252; letter-spacing:0.01em}
-#learn .card h3{overflow-wrap:anywhere; word-break:break-word; hyphens:auto; white-space:normal; max-width:100%}
-#learn .card h3::after{content:""; display:block; width:38px; height:3px; border-radius:999px; background:linear-gradient(90deg, rgba(39,67,218,0.85), rgba(155,109,247,0.75)); margin-top:8px; opacity:0.85}
-#learn .card p{color:#394876}
-#learn .card p{overflow-wrap:break-word}
-#learn .card{min-width:0}
-#learn .card:hover{transform:translateY(-6px); box-shadow:0 28px 60px rgba(15,24,64,0.2); border-color:rgba(39,67,218,0.28)}
-#learn .card:focus-within{outline:3px solid rgba(155,109,247,0.28); outline-offset:2px; box-shadow:0 28px 60px rgba(15,24,64,0.22)}
-#learn .hero-details-figure{margin-top:var(--s-4)}
+/* Container: adopt the site's section card look so it matches others */
+.who-join-reset > .container{
+  position:relative;
+  z-index:130;
+  max-width:1180px;
+  margin:0 auto;
+  padding:var(--s-6) clamp(var(--s-3), 4vw, var(--s-5));
+  border-radius:calc(var(--radius) * 1.6);
+  background:linear-gradient(150deg, rgba(255,255,255,0.94) 0%, rgba(244,247,255,0.92) 48%, rgba(237,240,255,0.88) 100%);
+  border:1px solid rgba(39,67,218,0.16);
+  box-shadow:var(--shadow-card);
+  overflow:visible;
+}
+
+/* Keep header styling consistent with other sections */
+.who-join-reset .benefits-header{display:grid; gap:8px; text-align:center; padding:clamp(var(--s-4), 4vw, var(--s-5)) clamp(var(--s-4), 4vw, var(--s-5)) var(--s-2)}
+.who-join-reset .benefits-header h2{margin:6px 0 0; color:#0f1a45}
+.who-join-reset .benefits-header h2::after{content:""; display:block; width:86px; height:6px; border-radius:999px; background:var(--grad-brand); margin:10px auto 0; box-shadow:0 6px 16px rgba(39,67,218,0.22)}
+.who-join-reset .benefits-header p{margin:0; color:#2a3568}
+
+/* Restore original benefits list visuals but scoped */
+.who-join-reset .benefits-list{list-style:none; padding:0; margin:0; display:grid; gap:var(--s-3); grid-template-columns:repeat(1, minmax(0,1fr));}
+.who-join-reset .benefits-list li{position:relative; display:flex; align-items:center; min-height:clamp(72px, 9vw, 112px); padding:var(--s-3); padding-left:56px; border-radius:calc(var(--radius) * 1.2); background:linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(241,245,255,0.94) 100%); border:1px solid rgba(39,67,218,0.14); box-shadow:0 22px 42px rgba(39,67,218,0.16); color:#2b356d; font-weight:600}
+.who-join-reset .benefits-list li::before{content:"✓"; position:absolute; left:18px; top:50%; transform:translateY(-50%); width:28px; height:28px; border-radius:10px; display:grid; place-items:center; color:#fff; background:var(--grad-brand); box-shadow:0 10px 22px rgba(39,67,218,0.25)}
+.who-join-reset .benefit-text{font-weight:600; color:var(--text)}
+
+.who-join-reset .benefits-cta{display:flex; justify-content:center; padding:var(--s-4);} 
+.who-join-reset .benefits-cta .btn{min-width:220px; text-align:center}
+
+/* Responsive: match site's existing breakpoint behaviour */
+@media (min-width:720px){
+  .who-join-reset .benefits-list{grid-template-columns:repeat(3, minmax(0,1fr))}
+}
+
+/* Mobile-specific safety for older iOS */
 @media (max-width:640px){
-  #learn::before{display:none}
-}
-@media (min-width:700px) and (max-width:1023px){
-  #learn .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .who-join-reset > .container{padding:clamp(var(--s-4), 6vw, var(--s-5)) clamp(var(--s-3), 6vw, var(--s-4)); border-radius:20px}
+  .who-join-reset, .who-join-reset > .container{ -webkit-transform: translateZ(0); transform: translateZ(0); -webkit-overflow-scrolling: auto;}
 }
 
-/* --- Lightbox (click-to-view full image) --- */
-.lightbox-overlay{position:fixed; inset:0; background:rgba(8,12,28,0.86); display:none; align-items:center; justify-content:center; padding:clamp(12px, 3vw, 20px); z-index:100000}
-.lightbox-overlay.is-open{display:flex}
-.lightbox-content{position:relative; max-width:96vw; max-height:92vh}
-.lightbox-img{display:block; max-width:96vw; max-height:92vh; width:auto; height:auto; border-radius:12px; background:#0b1220; box-shadow:0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.06)}
-/* Caption removed per request */
-.lightbox-close{position:absolute; top:-12px; right:-12px; display:inline-grid; place-items:center; width:38px; height:38px; border-radius:999px; border:1px solid rgba(255,255,255,0.3); background:rgba(22,28,60,0.6); color:#fff; cursor:pointer; box-shadow:0 10px 24px rgba(0,0,0,0.35)}
-.lightbox-close:focus-visible{outline:3px solid rgba(155,109,247,0.5)}
-body.lightbox-open{overflow:hidden}
-
-/* Make images feel clickable */
-img{cursor:pointer}
-
-/* Reduced motion: turn off the fancy bits */
-@media (prefers-reduced-motion: reduce){
-  .hero-figure, .cta-figure{animation:none}
-  .hero-figure img, .hero-details-figure img, .cta-figure img{transition:none}
-  .gains-card{transition:none}
-}
-
-/* Image/figure micro-interactions */
-.hero-figure img, .hero-details-figure img, .cta-figure img{transition:transform .45s ease}
-.hero-figure:hover img, .hero-details-figure:hover img, .cta-figure:hover img{transform:scale(1.03)}
-.hero-figure, .cta-figure{will-change:transform}
-
-/* Gains cards: subtle hover lift */
-.gains-card{transition:transform .22s ease, box-shadow .22s ease}
-.gains-card:hover{transform:translateY(-4px); box-shadow:0 26px 52px rgba(25,49,140,0.16)}
-
-/* Gentle floating for featured figures */
-.hero-figure{animation:floaty 16s ease-in-out infinite alternate}
-.cta-figure{animation:floaty 18s ease-in-out infinite alternate}
+/* End Who Should Join scoped styling */
