@@ -1221,49 +1221,6 @@
       }
     </script>
 
-    <script>
-      // Small robustness helper: if a <video> fails to load (some Safari cases),
-      // show its poster image as a fallback so users still see media preview.
-      (function () {
-        function onVideoError(e) {
-          var v = e.currentTarget || e.target;
-          try {
-            var poster = v.getAttribute("poster");
-            var wrapper = v.closest(".t-embed") || v.parentNode;
-            if (poster && wrapper) {
-              // Replace video with an img using the poster so user sees something
-              var img = document.createElement("img");
-              img.src = poster;
-              img.alt = v.getAttribute("aria-label") || "Video preview";
-              img.style.width = "100%";
-              img.style.height = "auto";
-              img.style.borderRadius =
-                getComputedStyle(v).borderRadius || "12px";
-              wrapper.replaceChild(img, v);
-            }
-          } catch (err) {
-            // swallow errors
-            console.warn("video fallback error", err);
-          }
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-          var vids = document.querySelectorAll(".t-embed video");
-          vids.forEach(function (v) {
-            // attach once and also try to detect network/media errors
-            v.addEventListener("error", onVideoError, { once: true });
-            // Some Safari versions never fire error but still don't show; set a timeout
-            setTimeout(function () {
-              if (v.readyState === 0 && v.paused) {
-                // treat as not loaded and invoke fallback
-                var evt = new Event("error");
-                v.dispatchEvent(evt);
-              }
-            }, 2500);
-          });
-        });
-      })();
-    </script>
     <script src="script.js?v=20251001"></script>
   </body>
 </html>

@@ -849,25 +849,3 @@ summary:focus-visible{outline:3px solid rgba(155,109,247,0.32); border-radius:12
 }
 
 /* End Who Should Join scoped styling */
-
-/* Testimonial video fixes: ensure no white background before play (older Safari)
-   and make videos inherit rounded corners and be responsive. */
-.t-embed video,
-.t-card video,
-video.t-video{
-  background: transparent !important;
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  border-radius: 12px !important;
-  object-fit: cover !important;
-}
-
-/* Ensure the video element clips to the rounded container in Safari */
-.t-card{overflow:hidden}
-
-/* If poster images are big, center/crop them to cover the area */
-video[poster]{
-  background-size: cover !important;
-  background-position: center center !important;
-}
