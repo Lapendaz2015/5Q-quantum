@@ -404,7 +404,7 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
 .t-track{position:relative; display:flex; gap:0; overflow:hidden; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory}
 .t-card{flex:0 0 100%; position:relative; padding:var(--s-3); border-radius:calc(var(--radius) * 1.1); border:1px solid rgba(39,67,218,0.14); background:linear-gradient(150deg, rgba(255,255,255,0.98) 0%, rgba(240,244,255,0.94) 100%); box-shadow:0 18px 42px rgba(25,49,140,0.12); scroll-snap-align:start}
 .t-card::after{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none}
-.t-embed{position:relative; z-index:1; display:flex; justify-content:center}
+.t-embed{position:relative; z-index:1; display:flex; justify-content:center; align-items:stretch; width:100%}
 /* Always one full-width slide visible */
 .t-nav{position:absolute; top:50%; left:0; right:0; height:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none; z-index:2}
 .t-btn{pointer-events:auto; appearance:none; border:none; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; font-size:24px; font-weight:700; color:#1d2b6f; background:#fff; box-shadow:0 10px 24px rgba(25,49,140,0.18); border:1px solid rgba(39,67,218,0.16); cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, background .15s ease; transform:translateY(-50%); z-index:3}
@@ -849,3 +849,30 @@ summary:focus-visible{outline:3px solid rgba(155,109,247,0.32); border-radius:12
 }
 
 /* End Who Should Join scoped styling */
+
+/* Testimonial video fixes: ensure no white background before play (older Safari)
+   and make videos inherit rounded corners and be responsive. */
+.t-embed video,
+.t-card video,
+video.t-video{
+  background: transparent !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 100% !important; /* override inline max-width constraining controls */
+  max-width: none !important; /* ensure native controls span full card */
+  height: auto !important;
+  border-radius: 12px !important;
+  object-fit: cover !important;
+}
+
+/* Force slide containers to stretch so video controls are not clipped */
+.t-track, .t-card{width:100%; align-items:stretch}
+
+/* Ensure the video element clips to the rounded container in Safari */
+.t-card{overflow:hidden}
+
+/* If poster images are big, center/crop them to cover the area */
+video[poster]{
+  background-size: cover !important;
+  background-position: center center !important;
+}

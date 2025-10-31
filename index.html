@@ -169,6 +169,20 @@
         </div>
       </header>
 
+      <!-- New section: 5Q Creative Communication and Social Science -->
+      <section class="section">
+        <div class="container">
+          <h2 class="reveal">5Q Creative Communication and Social Science</h2>
+          <div class="center" style="margin-top: var(--s-4)">
+            <img
+              src="images/5Q_Brain.jpg"
+              alt="5Q Brain illustration"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
       <!-- 2.5) WHAT YOU’LL GAIN (intro) -->
       <section class="section">
         <div class="container">
@@ -541,7 +555,7 @@
               <div class="t-card reveal">
                 <div class="t-embed">
                   <video
-                    src="videos/testi1.mp4"
+                    poster="images/testi_poster1.png"
                     controls
                     playsinline
                     preload="metadata"
@@ -551,13 +565,16 @@
                       height: auto;
                       border-radius: 12px;
                     "
-                  ></video>
+                  >
+                    <source src="videos/testi1.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <div class="t-card reveal">
                 <div class="t-embed">
                   <video
-                    src="videos/testi2.mp4"
+                    poster="images/testi_poster2.png"
                     controls
                     playsinline
                     preload="metadata"
@@ -567,13 +584,16 @@
                       height: auto;
                       border-radius: 12px;
                     "
-                  ></video>
+                  >
+                    <source src="videos/testi2.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <div class="t-card reveal">
                 <div class="t-embed">
                   <video
-                    src="videos/testi3.mp4"
+                    poster="images/testi_poster3.png"
                     controls
                     playsinline
                     preload="metadata"
@@ -583,13 +603,16 @@
                       height: auto;
                       border-radius: 12px;
                     "
-                  ></video>
+                  >
+                    <source src="videos/testi3.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <div class="t-card reveal">
                 <div class="t-embed">
                   <video
-                    src="videos/testi4.mp4"
+                    poster="images/testi_poster4.png"
                     controls
                     playsinline
                     preload="metadata"
@@ -599,13 +622,16 @@
                       height: auto;
                       border-radius: 12px;
                     "
-                  ></video>
+                  >
+                    <source src="videos/testi4.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <div class="t-card reveal">
                 <div class="t-embed">
                   <video
-                    src="videos/testi5.mp4"
+                    poster="images/testi_poster5.png"
                     controls
                     playsinline
                     preload="metadata"
@@ -615,13 +641,16 @@
                       height: auto;
                       border-radius: 12px;
                     "
-                  ></video>
+                  >
+                    <source src="videos/testi5.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <div class="t-card reveal">
                 <div class="t-embed">
                   <video
-                    src="videos/testi6.mp4"
+                    poster="images/testi_poster6.png"
                     controls
                     playsinline
                     preload="metadata"
@@ -631,13 +660,16 @@
                       height: auto;
                       border-radius: 12px;
                     "
-                  ></video>
+                  >
+                    <source src="videos/testi6.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <div class="t-card reveal">
                 <div class="t-embed">
                   <video
-                    src="videos/testi7.mp4"
+                    poster="images/testi_poster7.png"
                     controls
                     playsinline
                     preload="metadata"
@@ -647,7 +679,10 @@
                       height: auto;
                       border-radius: 12px;
                     "
-                  ></video>
+                  >
+                    <source src="videos/testi7.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -701,10 +736,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Monthly Plan</td>
-                  <td>RM 560 (4 lessons per month)</td>
-                </tr>
                 <tr>
                   <td>Per Module Plan</td>
                   <td>RM 1,170 (9 lessons per module)</td>
@@ -1190,6 +1221,49 @@
       }
     </script>
 
+    <script>
+      // Small robustness helper: if a <video> fails to load (some Safari cases),
+      // show its poster image as a fallback so users still see media preview.
+      (function () {
+        function onVideoError(e) {
+          var v = e.currentTarget || e.target;
+          try {
+            var poster = v.getAttribute("poster");
+            var wrapper = v.closest(".t-embed") || v.parentNode;
+            if (poster && wrapper) {
+              // Replace video with an img using the poster so user sees something
+              var img = document.createElement("img");
+              img.src = poster;
+              img.alt = v.getAttribute("aria-label") || "Video preview";
+              img.style.width = "100%";
+              img.style.height = "auto";
+              img.style.borderRadius =
+                getComputedStyle(v).borderRadius || "12px";
+              wrapper.replaceChild(img, v);
+            }
+          } catch (err) {
+            // swallow errors
+            console.warn("video fallback error", err);
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var vids = document.querySelectorAll(".t-embed video");
+          vids.forEach(function (v) {
+            // attach once and also try to detect network/media errors
+            v.addEventListener("error", onVideoError, { once: true });
+            // Some Safari versions never fire error but still don't show; set a timeout
+            setTimeout(function () {
+              if (v.readyState === 0 && v.paused) {
+                // treat as not loaded and invoke fallback
+                var evt = new Event("error");
+                v.dispatchEvent(evt);
+              }
+            }, 2500);
+          });
+        });
+      })();
+    </script>
     <script src="script.js?v=20251001"></script>
   </body>
 </html>
