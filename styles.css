@@ -663,6 +663,8 @@ body.is-loaded .loading-bar__progress{animation:loadingSweepComplete .4s ease fo
 .form-field:focus-within label{color:#1a2656}
 .form-field-full{grid-column:1 / -1}
 .form-field.error label{color:#B71C1C}
+.slide-toggle{transition:max-height .24s ease, opacity .18s ease; max-height:400px}
+.slide-toggle.is-hidden{display:none; max-height:0; opacity:0}
 label{font-weight:600; color:#101830; display:block; margin-bottom:0; letter-spacing:0.01em}
 input, select, textarea{
   width:100%; padding:14px 16px; border-radius:14px; border:1px solid rgba(39,67,218,0.18);
